@@ -14,13 +14,13 @@
       --text: #2e1f14; --text-muted: #7a6255; --border: #ddd0be;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', Georgia, sans-serif; background: var(--cream); color: var(--text); font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+    body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--text); font-size: 18px; font-weight: 500; line-height: 1.8; overflow-x: hidden; }
 
     /* NAV */
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(250,247,242,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
     .nav-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 600; color: var(--brown); letter-spacing: 0.04em; }
     .nav-links { display: flex; gap: 2.4rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: color 0.25s; }
+    .nav-links a { text-decoration: none; color: var(--text-muted); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; transition: color 0.25s; }
     .nav-links a:hover { color: var(--terracotta); }
 
     /* HERO */
@@ -28,10 +28,10 @@
     .hero-left { background: var(--brown); display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem 6rem 7rem; position: relative; overflow: hidden; }
     .hero-left::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: var(--terracotta); opacity: 0.18; }
     .hero-left::after { content: ''; position: absolute; bottom: 40px; left: 40px; width: 180px; height: 180px; border-radius: 50%; background: var(--sand); opacity: 0.09; }
-    .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-light); font-weight: 500; margin-bottom: 1.4rem; animation: fadeUp 0.8s ease both; }
+    .hero-eyebrow { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-light); font-weight: 600; margin-bottom: 1.4rem; animation: fadeUp 0.8s ease both; }
     .hero-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 300; color: var(--cream); line-height: 1.1; animation: fadeUp 0.9s 0.1s ease both; }
     .hero-name em { font-style: italic; color: var(--sand); }
-    .hero-tagline { margin-top: 1.6rem; font-size: 1rem; color: var(--sand-dark); font-weight: 300; max-width: 340px; line-height: 1.75; animation: fadeUp 1s 0.2s ease both; }
+    .hero-tagline { margin-top: 1.6rem; font-size: 1.3rem; color: var(--sand-dark); font-weight: 400; max-width: 340px; line-height: 1.75; animation: fadeUp 1s 0.2s ease both; }
     .hero-cta { margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 1s 0.3s ease both; }
     .btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 40px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; border: 1.5px solid transparent; }
     .btn-primary { background: var(--terracotta); color: white; border-color: var(--terracotta); }
@@ -40,7 +40,7 @@
     .btn-ghost:hover { border-color: var(--sand); transform: translateY(-2px); }
 
     .hero-right { background: var(--warm-white); display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; }
-    .hero-about-label { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); font-weight: 500; margin-bottom: 1.2rem; }
+    .hero-about-label { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); font-weight: 600; margin-bottom: 1.2rem; }
     .hero-about-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.35rem; font-weight: 400; color: var(--brown); line-height: 1.8; max-width: 460px; }
     .hero-about-text em { font-style: italic; color: var(--terracotta); }
     .hero-stats { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -72,20 +72,20 @@
     section { padding: 7rem; }
     section:nth-child(even) { background: var(--warm-white); }
     .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 4rem; }
-    .section-number { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; color: var(--terracotta); font-style: italic; opacity: 0.7; }
-    .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.8rem; font-weight: 300; color: var(--brown); }
+    .section-number { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--terracotta); font-style: italic; opacity: 0.7; }
+    .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.2rem; font-weight: 600; color: var(--brown); }
     .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 1rem; }
 
     /* EXPERIENCE */
     .exp-grid { display: flex; flex-direction: column; gap: 3rem; }
     .exp-card { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
     .exp-card:last-child { border-bottom: none; padding-bottom: 0; }
-    .exp-dates { font-size: 0.78rem; color: var(--terracotta); font-weight: 500; margin-bottom: 0.5rem; }
-    .exp-company { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.1rem; color: var(--brown); font-weight: 600; }
-    .exp-role { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.4rem; font-style: italic; }
+    .exp-dates { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--terracotta); font-weight: 600; margin-bottom: 0.5rem; }
+    .exp-company { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; }
+    .exp-role { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--text-muted); margin-top: 0.4rem; font-style: italic; }
     .exp-takeaway { margin-top: 1rem; font-size: 0.85rem; color: var(--terracotta); font-style: italic; border-left: 2px solid var(--terracotta); padding-left: 0.8rem; }
     .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .exp-bullets li { font-size: 0.92rem; color: var(--text); line-height: 1.65; padding-left: 1.2rem; position: relative; }
+    .exp-bullets li { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.75; padding-left: 1.2rem; position: relative; }
     .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); }
 
     /* PROJECTS */
@@ -94,35 +94,35 @@
     .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--terracotta), var(--sand-dark)); }
     .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(92,61,46,0.1); }
     .project-num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 3rem; font-weight: 300; color: var(--border); line-height: 1; margin-bottom: 1rem; }
-    .project-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; color: var(--brown); font-weight: 600; line-height: 1.3; margin-bottom: 1rem; }
-    .project-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; }
+    .project-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; line-height: 1.3; margin-bottom: 1rem; }
+    .project-desc { font-size: 1.05rem; font-weight: 500; color: var(--text-muted); line-height: 1.75; }
 
     /* SKILLS */
     .skills-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
-    .skills-group-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--brown); font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+    .skills-group-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
     .skills-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-    .skills-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; color: var(--text); }
+    .skills-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.1rem; font-weight: 500; color: var(--text); }
     .skills-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
     .tags-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
-    .tag { background: var(--sand); color: var(--brown); font-size: 0.78rem; padding: 0.35rem 0.9rem; border-radius: 40px; font-weight: 500; }
+    .tag { background: var(--sand); color: var(--brown); font-size: 1rem; padding: 0.35rem 0.9rem; border-radius: 40px; font-weight: 500; }
 
     /* EDUCATION */
     .edu-grid { display: flex; flex-direction: column; }
     .edu-card { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
     .edu-card:first-child { border-top: 1px solid var(--border); }
     .edu-year { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: var(--sand-dark); font-weight: 300; line-height: 1; }
-    .edu-school { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--brown); font-weight: 600; }
-    .edu-degree { font-size: 0.88rem; color: var(--text-muted); margin-top: 0.3rem; }
-    .edu-gpa { display: inline-block; margin-top: 0.8rem; background: var(--sand); color: var(--brown); font-size: 0.75rem; padding: 0.25rem 0.8rem; border-radius: 20px; font-weight: 500; }
+    .edu-school { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; }
+    .edu-degree { font-size: 1.15rem; font-weight: 500; color: var(--text-muted); margin-top: 0.3rem; }
+    .edu-gpa { display: inline-block; margin-top: 0.8rem; background: var(--sand); color: var(--brown); font-size: 1.05rem; padding: 0.35rem 1rem; border-radius: 20px; font-weight: 500; }
 
     /* BEYOND THE NUMBERS */
     .beyond-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .beyond-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.25rem; color: var(--brown); line-height: 1.85; font-weight: 400; }
+    .beyond-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--brown); line-height: 1.85; font-weight: 500; }
     .beyond-text p + p { margin-top: 1.2rem; }
     .beyond-cards { display: flex; flex-direction: column; gap: 1.2rem; }
     .beyond-card { background: var(--cream); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; display: flex; align-items: flex-start; gap: 1rem; }
     .beyond-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .beyond-card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--brown); margin-bottom: 0.2rem; }
+    .beyond-card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; font-weight: 500; color: var(--brown); margin-bottom: 0.2rem; }
     .beyond-card-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
 
     /* FOOTER */
@@ -136,7 +136,7 @@
 
     .footer-email-wrap { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
     .footer-email-label { color: var(--sand); font-size: 0.88rem; }
-    .copy-btn { background: transparent; border: 1.5px solid rgba(232,213,192,0.4); color: var(--sand); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1.2rem; border-radius: 40px; cursor: pointer; transition: all 0.25s; font-family: 'DM Sans', Georgia, sans-serif; }
+    .copy-btn { background: transparent; border: 1.5px solid rgba(232,213,192,0.4); color: var(--sand); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1.2rem; border-radius: 40px; cursor: pointer; transition: all 0.25s; font-family: 'Cormorant Garamond', Georgia, serif; }
     .copy-btn:hover { border-color: var(--sand); background: rgba(232,213,192,0.1); }
     .copy-confirm { color: var(--sand); font-size: 0.88rem; opacity: 0; transition: opacity 0.3s; }
     .copy-confirm.show { opacity: 1; }
@@ -274,7 +274,7 @@
         </div>
         <p class="skills-group-title" style="margin-top:2rem;">Certifications</p>
         <ul class="skills-list">
-          <li>Financial Modelling &amp; Valuation <em style="font-size:0.78rem; color:var(--terracotta)">(Pursuing)</em></li>
+          <li>Financial Modelling &amp; Valuation <em style="font-size:1.15rem; color:#c2714f; font-weight:600; font-style:normal;">(Pursuing)</em></li>
           <li>ESG Fundamentals for Financial Decision Making</li>
           <li>Design Thinking – Creativity &amp; Business Growth</li>
           <li>CESIM Global Challenge Strategy Simulation</li>
