@@ -76,10 +76,14 @@
     .belief-quote::before { content: '\201C'; font-size: 4rem; line-height: 0; vertical-align: -0.6rem; margin-right: 0.2rem; opacity: 0.5; }
     .belief-quote::after  { content: '\201D'; font-size: 4rem; line-height: 0; vertical-align: -0.6rem; margin-left: 0.2rem; opacity: 0.5; }
 
+    /* BIG BACKGROUND NUMBER */
+    .big-num { position: absolute; top: 2rem; right: 5rem; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 14rem; font-weight: 600; font-style: italic; color: rgba(194,113,79,0.07); line-height: 1; pointer-events: none; user-select: none; z-index: 0; }
+    .section-header, .exp-grid, .projects-grid, .skills-wrapper, .edu-grid, .beyond-grid { position: relative; z-index: 1; }
+
     /* SECTIONS */
-    section { padding: 7rem; }
+    section { padding: 7rem; position: relative; overflow: hidden; }
     section:nth-child(even) { background: var(--warm-white); }
-    .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 4rem; }
+    .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 4rem; position: relative; }
     .section-number { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--terracotta); font-style: italic; opacity: 0.7; }
     .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.2rem; font-weight: 600; color: var(--brown); }
     .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 1rem; }
@@ -199,8 +203,8 @@
 
   <!-- EXPERIENCE -->
   <section id="experience">
+    <span class="big-num">01</span>
     <div class="section-header reveal">
-      <span class="section-number">01</span>
       <h2 class="section-title">Experience</h2>
       <div class="section-line"></div>
     </div>
@@ -234,8 +238,8 @@
 
   <!-- PROJECTS -->
   <section id="projects">
+    <span class="big-num">02</span>
     <div class="section-header reveal">
-      <span class="section-number">02</span>
       <h2 class="section-title">Projects</h2>
       <div class="section-line"></div>
     </div>
@@ -255,8 +259,8 @@
 
   <!-- SKILLS -->
   <section id="skills">
+    <span class="big-num">03</span>
     <div class="section-header reveal">
-      <span class="section-number">03</span>
       <h2 class="section-title">Skills</h2>
       <div class="section-line"></div>
     </div>
@@ -295,8 +299,8 @@
 
   <!-- EDUCATION -->
   <section id="education">
+    <span class="big-num">04</span>
     <div class="section-header reveal">
-      <span class="section-number">04</span>
       <h2 class="section-title">Education</h2>
       <div class="section-line"></div>
     </div>
@@ -322,8 +326,8 @@
 
   <!-- BEYOND THE NUMBERS -->
   <section id="beyond">
+    <span class="big-num">05</span>
     <div class="section-header reveal">
-      <span class="section-number">05</span>
       <h2 class="section-title">Beyond the Numbers</h2>
       <div class="section-line"></div>
     </div>
