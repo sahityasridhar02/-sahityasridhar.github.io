@@ -1,382 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sahitya Sridhar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <title>Opportunity Section Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --cream: #faf7f2; --warm-white: #f5f0e8;
-      --terracotta: #c2714f; --terracotta-light: #d8896a;
-      --brown: #5c3d2e; --sand: #e8d5c0; --sand-dark: #d4b89a;
-      --text: #2e1f14; --text-muted: #7a6255; --border: #ddd0be;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Cormorant Garamond', Georgia, serif; background: var(--cream); color: var(--text); font-size: 18px; font-weight: 500; line-height: 1.8; overflow-x: hidden; }
+    body { font-family: 'Cormorant Garamond', Georgia, serif; background: #faf7f2; }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(250,247,242,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-    .nav-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.3rem; font-weight: 600; color: var(--brown); letter-spacing: 0.04em; }
-    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
-    .nav-links a { text-decoration: none; color: var(--text-muted); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; transition: color 0.25s; }
-    .nav-links a:hover { color: var(--terracotta); }
+    .preview-label { text-align: center; padding: 1.5rem; font-size: 0.85rem; color: #888; letter-spacing: 0.1em; text-transform: uppercase; }
 
-    /* HERO */
-    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 70px; }
-    .hero-left { background: var(--brown); display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem 6rem 7rem; position: relative; overflow: hidden; }
-    .hero-left::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: var(--terracotta); opacity: 0.18; }
-    .hero-left::after { content: ''; position: absolute; bottom: 40px; left: 40px; width: 180px; height: 180px; border-radius: 50%; background: var(--sand); opacity: 0.09; }
-    .hero-eyebrow { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-light); font-weight: 600; margin-bottom: 1.4rem; animation: fadeUp 0.8s ease both; }
-    .hero-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 300; color: var(--cream); line-height: 1.1; animation: fadeUp 0.9s 0.1s ease both; }
-    .hero-name em { font-style: italic; color: var(--sand); }
-    .hero-tagline { margin-top: 1.6rem; font-size: 1.3rem; color: var(--sand-dark); font-weight: 400; max-width: 340px; line-height: 1.75; animation: fadeUp 1s 0.2s ease both; }
-    .hero-cta { margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp 1s 0.3s ease both; }
-    .btn { display: inline-block; padding: 0.75rem 2rem; border-radius: 40px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; border: 1.5px solid transparent; }
-    .btn-primary { background: var(--terracotta); color: white; border-color: var(--terracotta); }
-    .btn-primary:hover { background: var(--terracotta-light); transform: translateY(-2px); }
-    .btn-ghost { background: transparent; color: var(--sand); border-color: rgba(232,213,192,0.4); }
-    .btn-ghost:hover { border-color: var(--sand); transform: translateY(-2px); }
+    /* BEYOND MOCK */
+    .beyond-mock { padding: 4rem 7rem; background: #faf7f2; border-bottom: 1px solid #ddd0be; }
+    .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }
+    .section-number { font-size: 1.2rem; color: #c2714f; font-style: italic; opacity: 0.7; }
+    .section-title { font-size: 2.2rem; font-weight: 300; color: #5c3d2e; }
+    .section-line { flex: 1; height: 1px; background: #ddd0be; margin-left: 1rem; }
+    .beyond-text { font-size: 1.1rem; color: #5c3d2e; line-height: 1.85; max-width: 500px; }
 
-    .hero-right { background: var(--warm-white); display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem; }
-    .hero-about-label { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); font-weight: 600; margin-bottom: 1.2rem; }
-    .hero-about-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.35rem; font-weight: 400; color: var(--brown); line-height: 1.8; max-width: 460px; }
-    .hero-about-text em { font-style: italic; color: var(--terracotta); }
-    .hero-stats { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-    .stat { border-top: 2px solid var(--border); padding-top: 1rem; }
-    .stat-number { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; font-weight: 600; color: var(--brown); line-height: 1; }
-    .stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.3rem; }
+    /* OPTION 1 - Centered statement with line */
+    .opp-1 { padding: 5rem 7rem; background: #f5f0e8; text-align: center; }
+    .opp-1 .opp-eyebrow { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: #c2714f; margin-bottom: 1.5rem; }
+    .opp-1 .opp-text { font-size: 1.4rem; font-weight: 300; color: #5c3d2e; line-height: 1.8; max-width: 700px; margin: 0 auto; }
+    .opp-1 .opp-line { width: 40px; height: 1px; background: #c2714f; margin: 1.5rem auto; }
 
-    /* BELIEF BANNER */
-    .belief-banner {
-      background: var(--terracotta);
-      padding: 4rem 7rem;
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-    .belief-quote {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--cream);
-      line-height: 1.5;
-      max-width: 800px;
-    }
-    .belief-quote::before { content: '\201C'; font-size: 4rem; line-height: 0; vertical-align: -0.6rem; margin-right: 0.2rem; opacity: 0.5; }
-    .belief-quote::after  { content: '\201D'; font-size: 4rem; line-height: 0; vertical-align: -0.6rem; margin-left: 0.2rem; opacity: 0.5; }
+    /* OPTION 2 - Left aligned with big quote styling */
+    .opp-2 { padding: 5rem 7rem; background: #faf7f2; }
+    .opp-2 .opp-eyebrow { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: #c2714f; margin-bottom: 1.5rem; }
+    .opp-2 .opp-text { font-size: 1.5rem; font-weight: 300; font-style: italic; color: #5c3d2e; line-height: 1.8; max-width: 750px; border-left: 3px solid #c2714f; padding-left: 2rem; }
 
-    /* SECTIONS */
-    section { padding: 7rem; }
-    section:nth-child(even) { background: var(--warm-white); }
-    .section-header { display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 4rem; }
-    .section-number { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--terracotta); font-style: italic; opacity: 0.7; }
-    .section-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2.2rem; font-weight: 600; color: var(--brown); }
-    .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 1rem; }
+    /* OPTION 3 - Full width terracotta block */
+    .opp-3 { padding: 5rem 7rem; background: #5c3d2e; text-align: center; }
+    .opp-3 .opp-eyebrow { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: #d4896a; margin-bottom: 1.5rem; }
+    .opp-3 .opp-text { font-size: 1.4rem; font-weight: 300; color: #faf7f2; line-height: 1.8; max-width: 700px; margin: 0 auto; }
+    .opp-3 .opp-line { width: 40px; height: 1px; background: #d4896a; margin: 1.5rem auto; }
 
-    /* EXPERIENCE */
-    .exp-grid { display: flex; flex-direction: column; gap: 3rem; }
-    .exp-card { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
-    .exp-card:last-child { border-bottom: none; padding-bottom: 0; }
-    .exp-dates { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--terracotta); font-weight: 600; margin-bottom: 0.5rem; }
-    .exp-company { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; }
-    .exp-role { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--text-muted); margin-top: 0.4rem; font-style: italic; }
-    .exp-takeaway { margin-top: 1rem; font-size: 0.85rem; color: var(--terracotta); font-style: italic; border-left: 2px solid var(--terracotta); padding-left: 0.8rem; }
-    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .exp-bullets li { font-size: 1.05rem; font-weight: 500; color: var(--text); line-height: 1.75; padding-left: 1.2rem; position: relative; }
-    .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--terracotta); }
+    /* FOOTER MOCK */
+    footer { background: #5c3d2e; padding: 3rem 7rem; display: flex; justify-content: space-between; align-items: center; }
+    .footer-name { font-size: 1.6rem; font-weight: 300; color: #faf7f2; }
+    .footer-btn { background: transparent; border: 1.5px solid rgba(232,213,192,0.4); color: #e8d5c0; font-size: 1rem; padding: 0.5rem 1.2rem; border-radius: 40px; cursor: pointer; font-family: 'Cormorant Garamond', serif; }
 
-    /* PROJECTS */
-    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .project-card { background: var(--cream); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; transition: transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; }
-    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--terracotta), var(--sand-dark)); }
-    .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(92,61,46,0.1); }
-    .project-num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 3rem; font-weight: 300; color: var(--border); line-height: 1; margin-bottom: 1rem; }
-    .project-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; line-height: 1.3; margin-bottom: 1rem; }
-    .project-desc { font-size: 1.05rem; font-weight: 500; color: var(--text-muted); line-height: 1.75; }
-
-    /* SKILLS */
-    .skills-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
-    .skills-group-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
-    .skills-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-    .skills-list li { display: flex; align-items: center; gap: 0.75rem; font-size: 1.1rem; font-weight: 500; color: var(--text); }
-    .skills-list li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
-    .tags-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
-    .tag { background: var(--sand); color: var(--brown); font-size: 1rem; padding: 0.35rem 0.9rem; border-radius: 40px; font-weight: 500; }
-
-    /* EDUCATION */
-    .edu-grid { display: flex; flex-direction: column; }
-    .edu-card { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
-    .edu-card:first-child { border-top: 1px solid var(--border); }
-    .edu-year { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 2rem; color: var(--sand-dark); font-weight: 300; line-height: 1; }
-    .edu-school { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.4rem; color: var(--brown); font-weight: 600; }
-    .edu-degree { font-size: 1.15rem; font-weight: 500; color: var(--text-muted); margin-top: 0.3rem; }
-    .edu-gpa { display: inline-block; margin-top: 0.8rem; background: var(--sand); color: var(--brown); font-size: 1.05rem; padding: 0.35rem 1rem; border-radius: 20px; font-weight: 500; }
-
-    /* BEYOND THE NUMBERS */
-    .beyond-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-    .beyond-text { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.2rem; color: var(--brown); line-height: 1.85; font-weight: 500; }
-    .beyond-text p + p { margin-top: 1.2rem; }
-    .beyond-cards { display: flex; flex-direction: column; gap: 1.2rem; }
-    .beyond-card { background: var(--cream); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; display: flex; align-items: flex-start; gap: 1rem; }
-    .beyond-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .beyond-card-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.05rem; font-weight: 500; color: var(--brown); margin-bottom: 0.2rem; }
-    .beyond-card-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.6; }
-
-    /* FOOTER */
-    footer { background: var(--brown); padding: 4rem 7rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
-    .footer-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.6rem; color: var(--cream); font-weight: 300; }
-    .footer-tagline { color: var(--sand-dark); font-size: 0.82rem; margin-top: 0.3rem; }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { color: var(--sand); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.07em; text-transform: uppercase; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--terracotta-light); }
-
-
-    .footer-email-wrap { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-    .footer-email-label { color: var(--sand); font-size: 0.88rem; }
-    .copy-btn { background: transparent; border: 1.5px solid rgba(232,213,192,0.4); color: var(--sand); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.5rem 1.2rem; border-radius: 40px; cursor: pointer; transition: all 0.25s; font-family: 'Cormorant Garamond', Georgia, serif; }
-    .copy-btn:hover { border-color: var(--sand); background: rgba(232,213,192,0.1); }
-    .copy-confirm { color: var(--sand); font-size: 0.88rem; opacity: 0; transition: opacity 0.3s; }
-    .copy-confirm.show { opacity: 1; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-    .reveal { opacity: 1; }
-
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; } .nav-links { display: none; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-left { padding: 5rem 2rem 3rem; } .hero-right { padding: 3rem 2rem 5rem; }
-      .belief-banner { padding: 3rem 2rem; }
-      section { padding: 5rem 2rem; }
-      .exp-card, .edu-card { grid-template-columns: 1fr; gap: 1rem; }
-      .projects-grid, .skills-wrapper, .beyond-grid { grid-template-columns: 1fr; gap: 2rem; }
-      footer { padding: 3rem 2rem; flex-direction: column; align-items: flex-start; }
-    }
+    .divider { border: none; border-top: 2px solid #ddd0be; margin: 2rem 7rem; }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-logo">Sahitya Sridhar</div>
-    <ul class="nav-links">
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#beyond">Beyond</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-left">
-            <h1 class="hero-name">Sahitya<br/><em>Sridhar</em></h1>
-      <p class="hero-tagline">Curious, still figuring out the rest.</p>
-      <div class="hero-cta">
-        <a href="#experience" class="btn btn-primary">See My Work</a>
-        <a href="#footer" class="btn btn-ghost" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'}); return false;">Say Hello</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <p class="hero-about-label">Who I Am</p>
-      <p class="hero-about-text">
-        Numbers feel like a puzzle to me — and I like being challenged. What pulled me into finance was noticing that two analysts, same models, same data, same company, can arrive at completely different conclusions. That gap is what draws me in.<br/><br/>
-        I haven't figured out exactly where in finance I want to be yet. But I know I'm drawn to the strategy, the research, the behind-the-scenes of deals and decisions. I'm at the beginning of this, and I'm excited about what's ahead.
-      </p></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-header reveal">
-      <span class="section-number">01</span>
-      <h2 class="section-title">Experience</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="exp-grid">
-      <div class="exp-card reveal">
-        <div class="exp-meta">
-          <p class="exp-dates">Oct 2025 – Feb 2026</p>
-          <p class="exp-company">Guidance Tamil Nadu</p>
-          <p class="exp-role">Business Intelligence Intern</p>
-        </div>
-        <ul class="exp-bullets">
-          <li>Prepared weekly intelligence reports covering earnings calls, major stock movements, and macro-micro developments using Bloomberg.</li>
-          <li>Analysed company growth and expansion plans through structured research of large-cap firms across sectors, conducting sector-wise supply chain mapping.</li>
-          <li>Developed a functional HTML dashboard using JavaScript to optimize BIU workflows and improve data structuring.</li>
-          <li>Assisted in building Excel-based company datasets and test key metrics to support early-stage company screening and competitor analysis.</li>
-        </ul>
-      </div>
-      <div class="exp-card reveal">
-        <div class="exp-meta">
-          <p class="exp-dates">Jun 2022 – Jul 2022</p>
-          <p class="exp-company">ITC Hotels Grand Chola</p>
-          <p class="exp-role">Accounting Intern</p>
-        </div>
-        <ul class="exp-bullets">
-          <li>Executed inventory reconciliation processes to ensure accuracy and maintain financial compliance.</li>
-          <li>Managed TDS certificate processing efficiently to meet regulatory requirements and timelines.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-header reveal">
-      <span class="section-number">02</span>
-      <h2 class="section-title">Projects</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card reveal">
-        <div class="project-num">01</div>
-        <h3 class="project-title">Microfinance &amp; Women's Economic Empowerment</h3>
-        <p class="project-desc">Evaluated how microfinance initiatives empower underprivileged women in India across economic, social, and financial dimensions — tracing the link between access to credit and improved livelihoods and quality of life.</p>
-      </div>
-      <div class="project-card reveal">
-        <div class="project-num">02</div>
-        <h3 class="project-title">AI Adoption in the GCC Insurance Sector</h3>
-        <p class="project-desc">Assessed the financial feasibility of integrating AI into the insurance industry — particularly health and life insurance — through a detailed analysis of implementation costs, projected benefits, and potential operational challenges.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-header reveal">
-      <span class="section-number">03</span>
-      <h2 class="section-title">Skills</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="skills-wrapper">
-      <div class="reveal">
-        <p class="skills-group-title">Core Competencies</p>
-        <ul class="skills-list">
-          <li>Leadership &amp; Team Collaboration</li>
-          <li>Strategic Thinking &amp; Problem Solving</li>
-          <li>Financial Analysis &amp; Market Research</li>
-          <li>Analytical &amp; Data-driven Decision Making</li>
-          <li>Interpersonal Communication</li>
-        </ul>
-      </div>
-      <div class="reveal">
-        <p class="skills-group-title">Tools &amp; Technologies</p>
-        <div class="tags-wrap">
-          <span class="tag">Bloomberg</span>
-          <span class="tag">MS Excel</span>
-          <span class="tag">MS PowerPoint</span>
-          <span class="tag">MS Word</span>
-          <span class="tag">Power BI</span>
-        </div>
-        <p class="skills-group-title" style="margin-top:2rem;">Certifications</p>
-        <ul class="skills-list">
-          <li>Financial Modelling &amp; Valuation <em style="font-size:1.15rem; color:#c2714f; font-weight:600; font-style:normal;">(Pursuing)</em></li>
-          <li>ESG Fundamentals for Financial Decision Making</li>
-          <li>Design Thinking – Creativity &amp; Business Growth</li>
-          <li>CESIM Global Challenge Strategy Simulation</li>
-          <li>Derivatives Fundamentals</li>
-          <li>Foreign Exchange Fundamentals</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education">
-    <div class="section-header reveal">
-      <span class="section-number">04</span>
-      <h2 class="section-title">Education</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card reveal">
-        <div class="edu-year">2025</div>
-        <div>
-          <p class="edu-school">SP Jain School of Global Management</p>
-          <p class="edu-degree">Master of Global Business — Global Finance</p>
-          <span class="edu-gpa">GPA 3.15</span>
-        </div>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-year">2023</div>
-        <div>
-          <p class="edu-school">M.O.P Vaishnav College for Women</p>
-          <p class="edu-degree">Bachelor of Commerce — Accounting &amp; Finance</p>
-          <span class="edu-gpa">CGPA 7.97</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BEYOND THE NUMBERS -->
-  <section id="beyond">
-    <div class="section-header reveal">
+  <!-- BEYOND MOCK (same for all) -->
+  <div class="beyond-mock">
+    <div class="section-header">
       <span class="section-number">05</span>
       <h2 class="section-title">Beyond the Numbers</h2>
       <div class="section-line"></div>
     </div>
-    <div class="beyond-grid">
-      <div class="beyond-text reveal">
-        <p>I'm professionally trained in Indian classical music, and it's where I go when I want to switch off from everything. Dance is something I'm deeply passionate about — not formally trained, but my passion makes up for it. I think they complement each other well to shape the person I am, and I wouldn't have it any other way.</p>
-        <p>I like to speak my mind, but others' perspectives matter to me as well. I took on leadership roles in college not for the title, but because I like being responsible for something and helping people figure things out together.</p>
-        <p style="margin-top:1.5rem; font-style:italic; color:var(--terracotta);">The serious and the fun, the structured and the spontaneous — I think everything I have been a part of has quietly shaped the person I am becoming.</p>
-      </div>
-      <div class="beyond-cards reveal">
-        <div class="beyond-card">
-          <div>
-            <p class="beyond-card-title">Indian Classical Music</p>
-                      </div>
-        </div>
-        <div class="beyond-card">
-          <div>
-            <p class="beyond-card-title">Dance</p>
-                      </div>
-        </div>
-        <div class="beyond-card">
-          <div>
-            <p class="beyond-card-title">Placement Committee — SP Jain</p>
-                      </div>
-        </div>
-        <div class="beyond-card">
-          <div>
-            <p class="beyond-card-title">Member of Parliament — Student Council</p>
-                      </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <p class="beyond-text">I'm professionally trained in Indian classical music, and it's where I go when I want to switch off from everything...</p>
+  </div>
 
-  <!-- FOOTER -->
-
-  <section style="padding: 5rem 7rem; background: #faf7f2;">
-    <p style="font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: #c2714f; margin-bottom: 1.5rem;">What's Next</p>
-    <p style="font-size: 1.5rem; font-weight: 300; font-style: italic; color: #5c3d2e; line-height: 1.8; max-width: 750px; border-left: 3px solid #c2714f; padding-left: 2rem;">Currently looking for opportunities in Finance (Financial Consulting, Strategy Consulting, Corporate Finance Consulting, Transaction Consulting, Wealth Management, Investment Banking), where I can learn, contribute, and grow.</p>
-  </section>
-
-  <footer id="footer">
-    <div>
-      <p class="footer-name">Sahitya Sridhar</p>
-    </div>
-    <div class="footer-links">
-      <button class="copy-btn" id="contactBtn">Contact Me</button>
-    </div>
+  <!-- OPTION 1 -->
+  <p class="preview-label">Option 1 — Centered, Clean</p>
+  <div class="opp-1">
+    <p class="opp-eyebrow">What's Next</p>
+    <div class="opp-line"></div>
+    <p class="opp-text">Currently looking for opportunities in Finance (Financial Consulting, Strategy Consulting, Corporate Finance Consulting, Transaction Consulting, Wealth Management, Investment Banking), where I can learn, contribute, and grow.</p>
+  </div>
+  <footer>
+    <div class="footer-name">Sahitya Sridhar</div>
+    <button class="footer-btn">Contact Me</button>
   </footer>
 
-    <script>
+  <div class="divider"></div>
 
+  <!-- OPTION 2 -->
+  <p class="preview-label">Option 2 — Left Aligned with Accent Line</p>
+  <div class="opp-2">
+    <p class="opp-eyebrow">What's Next</p>
+    <p class="opp-text">Currently looking for opportunities in Finance (Financial Consulting, Strategy Consulting, Corporate Finance Consulting, Transaction Consulting, Wealth Management, Investment Banking), where I can learn, contribute, and grow.</p>
+  </div>
+  <footer>
+    <div class="footer-name">Sahitya Sridhar</div>
+    <button class="footer-btn">Contact Me</button>
+  </footer>
 
+  <div class="divider"></div>
 
-  
-    document.getElementById('contactBtn').addEventListener('click', function() {
-      const p1 = 'sahityasridhar02';
-      const p2 = 'gmail';
-      const p3 = 'com';
-      window.open('https://mail.google.com/mail/?view=cm&to=' + p1 + '@' + p2 + '.' + p3, '_blank');
-    });
-  </script>
+  <!-- OPTION 3 -->
+  <p class="preview-label">Option 3 — Dark Brown Block</p>
+  <div class="opp-3">
+    <p class="opp-eyebrow">What's Next</p>
+    <div class="opp-line"></div>
+    <p class="opp-text">Currently looking for opportunities in Finance (Financial Consulting, Strategy Consulting, Corporate Finance Consulting, Transaction Consulting, Wealth Management, Investment Banking), where I can learn, contribute, and grow.</p>
+  </div>
+  <footer style="background:#3a2518;">
+    <div class="footer-name">Sahitya Sridhar</div>
+    <button class="footer-btn">Contact Me</button>
+  </footer>
+
 </body>
 </html>
