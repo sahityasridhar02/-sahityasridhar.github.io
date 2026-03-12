@@ -34,8 +34,13 @@
     /* HERO */
     .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 70px; }
     .hero-left { background: var(--brown); display: flex; flex-direction: column; justify-content: center; padding: 6rem 5rem 6rem 7rem; position: relative; overflow: hidden; }
-    .hero-left::before { content: ''; position: absolute; top: -80px; right: -80px; width: 320px; height: 320px; border-radius: 50%; background: var(--terracotta); opacity: 0.18; }
-    .hero-left::after { content: ''; position: absolute; bottom: 40px; left: 40px; width: 180px; height: 180px; border-radius: 50%; background: var(--sand); opacity: 0.09; }
+    .blob { position: absolute; border-radius: 50%; opacity: 0.18; pointer-events: none; }
+    .blob-1 { width: 320px; height: 320px; background: var(--terracotta); top: -80px; right: -80px; animation: float1 8s ease-in-out infinite; }
+    .blob-2 { width: 180px; height: 180px; background: var(--sand); bottom: 40px; left: 40px; animation: float2 11s ease-in-out infinite; opacity: 0.09; }
+    .blob-3 { width: 100px; height: 100px; background: var(--terracotta-light); top: 50%; right: 100px; animation: float3 7s ease-in-out infinite; opacity: 0.15; }
+    @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1);} 33%{transform:translate(-15px,20px) scale(1.05);} 66%{transform:translate(10px,-10px) scale(0.95);} }
+    @keyframes float2 { 0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(20px,-25px) scale(1.08);} }
+    @keyframes float3 { 0%,100%{transform:translate(0,0);} 40%{transform:translate(-20px,15px);} 80%{transform:translate(10px,-20px);} }
     .hero-eyebrow { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta-light); font-weight: 600; margin-bottom: 1.4rem; animation: fadeUp 0.8s ease both; }
     .hero-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 300; color: var(--cream); line-height: 1.1; animation: fadeUp 0.9s 0.1s ease both; }
     .hero-name em { font-style: italic; color: var(--sand); }
@@ -154,6 +159,8 @@
     .copy-confirm.show { opacity: 1; }
 
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+    @keyframes popIn { from{transform:scale(0.85);opacity:0;} to{transform:scale(1);opacity:1;} }
     .reveal { opacity: 1; }
 
     @media (max-width: 900px) {
@@ -184,8 +191,11 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
             <h1 class="hero-name">Sahitya<br/><em>Sridhar</em></h1>
-      <p class="hero-tagline">Curious, still figuring out the rest.</p>
+      <p class="hero-tagline" id="heroTagline"><span id="typingCursor" style="display:inline-block;width:2px;height:1em;background:var(--sand-dark);margin-left:2px;vertical-align:text-bottom;animation:blink 0.7s steps(1) infinite;"></span></p>
       <div class="hero-cta">
         <a href="#experience" class="btn btn-primary">See My Work</a>
         <a href="#footer" class="btn btn-ghost" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'}); return false;">Say Hello</a>
@@ -362,6 +372,17 @@
     </div>
   </section>
 
+  <!-- CONTACT POPUP -->
+  <div id="contactPopup" style="display:none; position:fixed; inset:0; background:rgba(46,31,20,0.5); z-index:300; align-items:center; justify-content:center; backdrop-filter:blur(4px);">
+    <div style="background:#faf7f2; border-radius:20px; padding:3rem; max-width:420px; width:90%; text-align:center; animation:popIn 0.3s ease; box-shadow:0 20px 60px rgba(46,31,20,0.2);">
+      <div style="font-size:2.5rem; margin-bottom:1rem;">✉️</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:#5c3d2e; margin-bottom:0.5rem;">Let's talk!</div>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.1rem; color:#7a6255; line-height:1.7; margin-bottom:2rem;">Great, I'd love to hear from you. This will open Gmail so you can send me a message directly.</p>
+      <button id="popupConfirm" style="background:#c2714f; color:white; border:none; padding:0.7rem 2rem; border-radius:40px; font-size:1rem; font-family:'Cormorant Garamond',serif; cursor:pointer; margin-right:0.5rem;">Open Gmail</button>
+      <button onclick="document.getElementById('contactPopup').style.display='none'" style="background:transparent; color:#7a6255; border:1.5px solid #ddd0be; padding:0.7rem 2rem; border-radius:40px; font-size:1rem; font-family:'Cormorant Garamond',serif; cursor:pointer;">Maybe later</button>
+    </div>
+  </div>
+
   <!-- FOOTER -->
 
   <section style="padding: 5rem 7rem; background: #5c3d2e; text-align: center;">
@@ -384,12 +405,34 @@
 
 
   
+    // Contact popup
     document.getElementById('contactBtn').addEventListener('click', function() {
+      const popup = document.getElementById('contactPopup');
+      popup.style.display = 'flex';
+    });
+    document.getElementById('popupConfirm').addEventListener('click', function() {
+      document.getElementById('contactPopup').style.display = 'none';
       const p1 = 'sahityasridhar02';
       const p2 = 'gmail';
       const p3 = 'com';
       window.open('https://mail.google.com/mail/?view=cm&to=' + p1 + '@' + p2 + '.' + p3, '_blank');
     });
+
+    // Typing animation
+    const taglineText = "Curious, still figuring out the rest.";
+    const taglineEl = document.getElementById('heroTagline');
+    const cursor = '<span id="typingCursor" style="display:inline-block;width:2px;height:1em;background:var(--sand-dark);margin-left:2px;vertical-align:text-bottom;animation:blink 0.7s steps(1) infinite;"></span>';
+    let i = 0;
+    setTimeout(() => {
+      const interval = setInterval(() => {
+        if (i < taglineText.length) {
+          taglineEl.innerHTML = taglineText.slice(0, ++i) + cursor;
+        } else {
+          clearInterval(interval);
+          taglineEl.innerHTML = taglineText;
+        }
+      }, 60);
+    }, 1000);
   </script>
 </body>
 </html>
